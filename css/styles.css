@@ -10836,3 +10836,26 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+/* new styles for about page */
+.about-body p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+    .about-body h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2rem;
+    }
+    /* classy black icons */
+    .social-links a {
+      color: #000;
+      transition: color 0.2s ease;
+    }
+    .social-links a:hover {
+      color: #555; /* subtle hover */
+    }
+    .social-links i {
+      font-size: 1.8rem;
+    }

@@ -8,32 +8,7 @@
   <title>About – Talha Ahmed</title>
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <link href="css/styles.css" rel="stylesheet">
-  <!-- Font Awesome for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    /* make the about text feel bigger & nicer */
-    .about-body p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      margin-bottom: 1.2rem;
-    }
-    .about-body h2 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-top: 2rem;
-    }
-    /* classy black icons */
-    .social-links a {
-      color: #000;
-      transition: color 0.2s ease;
-    }
-    .social-links a:hover {
-      color: #555; /* subtle hover */
-    }
-    .social-links i {
-      font-size: 1.8rem;
-    }
-  </style>
 </head>
 
 <body>
@@ -87,14 +62,7 @@
 
     <!-- Sidebar widgets -->
        <?php include './components/widgets.php'; ?>
-<!-- Footer -->
-<footer class="py-5 bg-dark">
-  <div class="container">
-    <p class="m-0 text-center text-white">
-      &copy; <?= date('Y') ?> Talha Ahmed – All Rights Reserved
-    </p>
-  </div>
-</footer>
+       <?php include './components/footer.php'; ?>
 
 <!-- Bootstrap core JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
