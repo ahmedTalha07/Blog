@@ -70,4 +70,3 @@ if (!empty($tags_input)) {
     }
 }
 exit;
-?>
