@@ -8,15 +8,15 @@
     <meta name="author" content="Talha Ahmed">
     <title>Talha Ahmed Blog</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
 </head>
 
 <body>
     <!-- Responsive navbar -->
-    <?php include './components/navbar.php'; ?>
+    <?php include '/components/navbar.php'; ?>
 
     <!-- Page header -->
-    <?php include './components/header.php'; ?>
+    <?php include '/components/header.php'; ?>
     <!-- Page content -->
     <div class="container">
         <div class="row">
@@ -105,12 +105,12 @@
                 </div>
 
                 <!-- Pagination -->
-                <?php include './components/pagination.php'; ?>
+                <?php include '/components/pagination.php'; ?>
 
-            <?php include './components/widgets.php'; ?>
+            <?php include '/components/widgets.php'; ?>
 
     <!-- Footer -->
-           <?php include './components/footer.php'; ?>
+           <?php include '/components/footer.php'; ?>
 
     <!-- Bootstrap core JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
