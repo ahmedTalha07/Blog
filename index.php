@@ -58,7 +58,7 @@
                 <?php endif; ?>
 
                 <!-- Non-featured posts -->
-                <div class="row g-4">
+                <div class="row g-4" data-masonry='{"percentPosition": true }'>
                     <?php
                     $postsPerPage = 4;
                     $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
