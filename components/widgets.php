@@ -1,0 +1,44 @@
+<?php include './db.php'; ?>
+<div class="col-lg-4">
+    <!-- Search widget -->
+    <div class="card mb-4">
+        <div class="card-header">Search</div>
+        <div class="card-body">
+            <form onsubmit="window.location.href='/blog/search/' + encodeURIComponent(this.q.value); return false;">
+                <div class="input-group">
+                    <label for="q" class="visually-hidden">Search:</label>
+                    <input class="form-control" type="text" id="q" name="q" placeholder="Search..." required>
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+    <!-- Categories widget -->
+    <div class="card mb-4">
+        <div class="card-header">Categories</div>
+        <div class="card-body">
+            <ul class="list-unstyled mb-0">
+                <?php
+                $cats = mysqli_query($conn, "SELECT * FROM categories");
+                while ($c = mysqli_fetch_assoc($cats)):
+                ?>
+                    <li><a href="/blog/category/<?= $c['id'] ?>">
+                            <?= htmlspecialchars($c['name']) ?></a></li>
+                <?php endwhile; ?>
+            </ul>
+        </div>
+    </div>
+
+    <!-- About widget -->
+    <div class="card mb-4">
+        <div class="card-header">About Me</div>
+        <div class="card-body">
+            Hi, I’m Talha Ahmed! I share my projects, tutorials, and thoughts on web development here.
+        </div>
+    </div>
+</div>
+</div>
+</div>
