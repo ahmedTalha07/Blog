@@ -82,7 +82,7 @@
                     while ($post = mysqli_fetch_assoc($nonFeatured)):
                     ?>
                         <div class="col-lg-6">
-                            <div class="card mb-4 h-100 shadow-sm">
+                            <div class="card mb-4 mt-4 h-100 shadow-sm">
                                 <img class="card-img-top"
                                     src="uploads/<?= htmlspecialchars($post['image']) ?>"
                                     alt="<?= htmlspecialchars($post['title']) ?>">
