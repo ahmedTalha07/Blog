@@ -62,7 +62,7 @@ $result = mysqli_query(
                     <p class="card-text">
                       <?= substr(strip_tags($post['content']), 0, 100) ?>…
                     </p>
-                    <a href="post/index.php?slug=<?= htmlspecialchars($featured['slug']) ?>" 
+                    <a href="post/index.php?slug=<?= htmlspecialchars($post['slug']) ?>" 
                        class="btn btn-outline-primary btn-sm">
                       Read Full Article →
                     </a>
