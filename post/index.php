@@ -1,6 +1,12 @@
 <?php
 include '../db.php';
 
+$slug = $_GET['slug'] ?? '';
+if (!$slug) {
+    echo "No slug provided.";
+    exit;
+}
+
 // Use prepared statement for safety
 $stmt = mysqli_prepare($conn, "SELECT * FROM posts WHERE slug = ? LIMIT 1");
 mysqli_stmt_bind_param($stmt, "s", $slug);
