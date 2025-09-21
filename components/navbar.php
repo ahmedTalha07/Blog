@@ -7,8 +7,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active inactive" href="/blog/index">Blog</a></li>
-                <li class="nav-item"><a class="nav-link active inactive" href="/blog/about">About</a></li>
+                <li class="nav-item"><a class="nav-link active inactive" href="/index">Blog</a></li>
+                <li class="nav-item"><a class="nav-link active inactive" href="/about">About</a></li>
             </ul>
         </div>
     </div>
