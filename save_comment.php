@@ -25,5 +25,5 @@ if ($post_id && $name && $email && $content) {
     }
 } else {
     header("Location: post/$slug?error=1");
+    exit;
 }
-?>
