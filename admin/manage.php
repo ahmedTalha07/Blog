@@ -38,13 +38,13 @@ include 'header.php';
             <td><?= date('M d, Y', strtotime($row['created_at'])) ?></td>
             <td>
               <?php if (!$row['featured']): ?>
-                <a href="feature.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-outline-primary mb-1">Set as Featured</a>
+                <a href="admin/feature.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-outline-primary mb-1">Set as Featured</a>
               <?php else: ?>
                 <span class="text-muted d-block mb-1">Currently Featured</span>
               <?php endif; ?>
 
-              <a href="edit.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-warning mb-1">Edit</a>
-              <a href="delete.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this post?');">Delete</a>
+              <a href="admin/edit.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-warning mb-1">Edit</a>
+              <a href="admin/delete.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this post?');">Delete</a>
             </td>
 
           </tr>
