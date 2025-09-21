@@ -22,6 +22,7 @@ $result = mysqli_query($conn, "
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <base href="https://ahmedtalha07.wasmer.app/">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Posts under <?= htmlspecialchars($cat_name) ?> category">
@@ -29,7 +30,7 @@ $result = mysqli_query($conn, "
   <title><?= htmlspecialchars($cat_name) ?> - Talha Ahmed Blog</title>
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/css/styles.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
 <!-- Navbar -->
