@@ -80,8 +80,7 @@ $catResult = mysqli_query($conn, "SELECT * FROM categories");
       <button class="btn btn-primary" type="submit">Update</button>
       <a href="manage.php" class="btn btn-secondary">Back</a>
     </form>
-  </div>
+          </main>
   <?php include 'footer.php'; ?>
 </body>
-
 </html>
