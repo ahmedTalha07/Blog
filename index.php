@@ -50,7 +50,7 @@
                             </div>
                             <h2 class="card-title"><?= htmlspecialchars($featured['title']) ?></h2>
                             <p class="card-text"><?= substr(strip_tags($featured['content']), 0, 200) ?>...</p>
-                            <a class="btn btn-primary" href="post/<?= htmlspecialchars($featured['slug']) ?>">
+                            <a class="btn btn-primary" href="post/index.php?slug=<?= htmlspecialchars($featured['slug']) ?>">
                                 Read Full Article →
                             </a>
                         </div>
