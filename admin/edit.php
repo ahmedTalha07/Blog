@@ -1,6 +1,6 @@
 <?php include '../db.php';
 include 'auth.php';
-
+include 'header.php';
 
 
 if (!isset($_GET['id'])) {
@@ -81,6 +81,7 @@ $catResult = mysqli_query($conn, "SELECT * FROM categories");
       <a href="manage.php" class="btn btn-secondary">Back</a>
     </form>
   </div>
+  <?php include 'footer.php'; ?>
 </body>
 
 </html>
