@@ -1,10 +1,10 @@
-RewriteEngine On
-DirectoryIndex index.php
+# RewriteEngine On
+# DirectoryIndex index.php
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^post/([a-zA-Z0-9\-_]+)$ post/index.php?slug=$1 [L,QSA]
-RewriteRule ^search/([a-zA-Z0-9\-%]+)$ search.php?q=$1 [L,QSA]
-RewriteRule ^category/([0-9]+)$ category.php?id=$1 [L,QSA]
-RewriteRule ^about$ about.php [L,QSA]
-RewriteRule ^index$ index.php [L,QSA]
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^post/([a-zA-Z0-9\-_]+)$ post/index.php?slug=$1 [L,QSA]
+# RewriteRule ^search/([a-zA-Z0-9\-%]+)$ search.php?q=$1 [L,QSA]
+# RewriteRule ^category/([0-9]+)$ category.php?id=$1 [L,QSA]
+# RewriteRule ^about$ about.php [L,QSA]
+# RewriteRule ^index$ index.php [L,QSA]

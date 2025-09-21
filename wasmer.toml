@@ -1,14 +1,13 @@
 [package]
-name = "your-app-name"
+name = "my-php-app"
 version = "1.0.0"
 
 [web]
-  # the entrypoint of your PHP app
-  entrypoint = "public/index.php"  # or just "index.php" depending on your folder structure
-  # any public files like css/js/images
-  assets = ["css", "js", "uploads"]
+# tell Wasmer to use PHP to run the app
+runner = "php"
+entrypoint = "index.php"
+assets = ["css", "js", "uploads", "images"]
 
-# this is where rewrites happen
 [[web.routes]]
 pattern = "/post/:slug"
 destination = "/post/index.php?slug=:slug"
@@ -24,7 +23,3 @@ destination = "/category.php?id=:id"
 [[web.routes]]
 pattern = "/about"
 destination = "/about.php"
-
-[[web.routes]]
-pattern = "/index"
-destination = "/index.php"
