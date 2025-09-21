@@ -1,24 +1,8 @@
 [package]
-name = "your-app"
+name = "myphpapp"
 version = "1.0.0"
 
 [web]
 runner = "php"
 entrypoint = "index.php"
 assets = ["css", "js", "uploads", "images"]
-
-[[web.routes]]
-pattern = "/post/:slug"
-destination = "/post/index.php?slug=:slug"
-
-[[web.routes]]
-pattern = "/search/:query"
-destination = "/search.php?q=:query"
-
-[[web.routes]]
-pattern = "/category/:id"
-destination = "/category.php?id=:id"
-
-[[web.routes]]
-pattern = "/about"
-destination = "/about.php"
