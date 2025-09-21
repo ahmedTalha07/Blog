@@ -18,4 +18,3 @@ mysqli_query($conn, "UPDATE posts SET featured = 1 WHERE id = $id");
 // Redirect back to manage panel
 header("Location: manage.php");
 exit;
-?>
