@@ -38,7 +38,7 @@ $commentCount = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS total
                     <div class="card-body">
                         <h5 class="card-title">Categories</h5>
                         <p class="card-text"><?= $categoryCount ?> categories</p>
-                        <a href="categories.php" class="btn btn-light btn-sm">Manage Categories</a>
+                        <a href="/admin/categories.php" class="btn btn-light btn-sm">Manage Categories</a>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@ $commentCount = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS total
                     <div class="card-body">
                         <h5 class="card-title">Tags</h5>
                         <p class="card-text"><?= $tagCount ?> unique tags</p>
-                        <a href="tags.php" class="btn btn-light btn-sm">View Tags</a>
+                        <a href="/admin/tags.php" class="btn btn-light btn-sm">View Tags</a>
                     </div>
                 </div>
             </div>
@@ -56,13 +56,13 @@ $commentCount = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS total
                     <div class="card-body">
                         <h5 class="card-title">Comments</h5>
                         <p class="card-text"><?= $commentCount ?> comments</p>
-                        <a href="comments.php" class="btn btn-light btn-sm">Moderate Comments</a>
+                        <a href="/admin/comments.php" class="btn btn-light btn-sm">Moderate Comments</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <a href="add.php" class="btn btn-primary">+ Add New Post</a>
+        <a href="/admin/add.php" class="btn btn-primary">+ Add New Post</a>
     </main>
 
     <?php include 'footer.php'; ?>
