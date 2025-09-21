@@ -22,7 +22,6 @@ $result = mysqli_query($conn, "
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <base href="https://ahmedtalha07.wasmer.app/">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Posts under <?= htmlspecialchars($cat_name) ?> category">
@@ -34,9 +33,9 @@ $result = mysqli_query($conn, "
 </head>
 <body>
 <!-- Navbar -->
-       <?php include './components/navbar.php'; ?>
+       <?php include 'components/navbar.php'; ?>
 <!-- Header -->
-       <?php include './components/header.php'; ?>
+       <?php include 'components/header.php'; ?>
 <!-- Category posts -->
 <main class="flex-grow-1 container">
   <div class="row">
@@ -72,11 +71,11 @@ $result = mysqli_query($conn, "
 
 
       <!-- Search widget -->
-             <?php include './components/widgets.php'; ?>
+             <?php include 'components/widgets.php'; ?>
 </div>
 </main>
 <!-- Footer -->
-       <?php include './components/footer.php'; ?>
+       <?php include 'components/footer.php'; ?>
         
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
