@@ -4,7 +4,7 @@
     <div class="card mb-4">
         <div class="card-header">Search</div>
         <div class="card-body">
-            <form onsubmit="window.location.href='/blog/search/' + encodeURIComponent(this.q.value); return false;">
+            <form onsubmit="window.location.href='/search/' + encodeURIComponent(this.q.value); return false;">
                 <div class="input-group">
                     <label for="q" class="visually-hidden">Search:</label>
                     <input class="form-control" type="text" id="q" name="q" placeholder="Search..." required>
@@ -25,7 +25,7 @@
                 $cats = mysqli_query($conn, "SELECT * FROM categories");
                 while ($c = mysqli_fetch_assoc($cats)):
                 ?>
-                    <li><a href="/blog/category/<?= $c['id'] ?>">
+                    <li><a href="/category/<?= $c['id'] ?>">
                             <?= htmlspecialchars($c['name']) ?></a></li>
                 <?php endwhile; ?>
             </ul>

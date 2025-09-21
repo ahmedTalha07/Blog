@@ -95,7 +95,7 @@ if ($post['category_id']) {
             <div class="mt-4">
                 <strong>Tags:</strong>
                 <?php foreach ($tagList as $tag): ?>
-                    <a href="/blog/tag.php?name=<?= urlencode($tag) ?>" 
+                    <a href="/tag.php?name=<?= urlencode($tag) ?>" 
                        class="badge bg-secondary me-1"><?= htmlspecialchars($tag) ?></a>
                 <?php endforeach; ?>
             </div>
@@ -135,7 +135,7 @@ if ($post['category_id']) {
         <?php elseif (isset($_GET['error'])): ?>
             <div class="alert alert-danger">Failed to submit comment. Please fill all fields.</div>
         <?php endif; ?>
-        <form action="/blog/save_comment.php" method="POST" class="card shadow-sm p-4">
+        <form action="/save_comment.php" method="POST" class="card shadow-sm p-4">
             <input type="hidden" name="post_id" value="<?= $post['id'] ?>">
             <div class="mb-3">
                 <label class="form-label">Name</label>

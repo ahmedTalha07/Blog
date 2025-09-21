@@ -48,7 +48,7 @@ $result = mysqli_query(
                 <div class="card mb-4 shadow-sm h-100">
                   <?php if (!empty($post['image'])): ?>
                     <img class="card-img-top" 
-                         src="/blog/uploads/<?= htmlspecialchars($post['image']) ?>" 
+                         src="/uploads/<?= htmlspecialchars($post['image']) ?>" 
                          alt="<?= htmlspecialchars($post['title']) ?>"
                          style="height:200px;object-fit:cover;">
                   <?php endif; ?>
