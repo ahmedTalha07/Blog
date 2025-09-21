@@ -95,7 +95,7 @@
                                     </div>
                                     <h2 class="card-title h4"><?= htmlspecialchars($post['title']) ?></h2>
                                     <p class="card-text"><?= substr(strip_tags($post['content']), 0, 100) ?>...</p>
-                                    <a class="btn btn-outline-primary" href="post/index.php?slug=<?= htmlspecialchars($featured['slug']) ?>">
+                                    <a class="btn btn-outline-primary" href="post/index.php?slug=<?= htmlspecialchars($nonFeatured['slug']) ?>">
                                         Read Full Article →
                                     </a>
                                 </div>
