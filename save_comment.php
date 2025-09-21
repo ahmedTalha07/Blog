@@ -19,11 +19,11 @@ if ($post_id && $name && $email && $content) {
     $slug = $slugRow['slug'] ?? 'index';
 
     if ($success) {
-        header("Location: post/$slug?success=1");
+        header("Location: /post/index.php?slug=$slug&success=1");
     } else {
-        header("Location: post/$slug?error=1");
+        header("Location: post/index.php?slug=$slug&error=1");
     }
 } else {
-    header("Location: post/$slug?error=1");
+    header("Location: post/index.php?slug=$slug&error=1");
     exit;
 }
