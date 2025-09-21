@@ -29,7 +29,7 @@ $commentCount = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS total
                     <div class="card-body">
                         <h5 class="card-title">Posts</h5>
                         <p class="card-text"><?= $postCount ?> total posts</p>
-                        <a href="manage.php" class="btn btn-light btn-sm">Manage Posts</a>
+                        <a href="/admin/manage.php" class="btn btn-light btn-sm">Manage Posts</a>
                     </div>
                 </div>
             </div>
