@@ -4,7 +4,7 @@
     <div class="card mb-4">
         <div class="card-header">Search</div>
         <div class="card-body">
-            <form onsubmit="window.location.href='/search/' + encodeURIComponent(this.q.value); return false;">
+            <form onsubmit="window.location.href='/search.php/' + encodeURIComponent(this.q.value); return false;">
                 <div class="input-group">
                     <label for="q" class="visually-hidden">Search:</label>
                     <input class="form-control" type="text" id="q" name="q" placeholder="Search..." required>
