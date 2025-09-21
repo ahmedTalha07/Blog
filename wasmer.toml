@@ -1,8 +1,0 @@
-[package]
-name = "myphpapp"
-version = "1.0.0"
-
-[web]
-runner = "php"
-entrypoint = "index.php"
-assets = ["css", "js", "uploads", "images"]
