@@ -1,7 +1,6 @@
 <?php
 include 'auth.php';
 include '../db.php';
-include 'header.php';
 
 // Handle delete action
 if (isset($_GET['delete'])) {
@@ -10,6 +9,8 @@ if (isset($_GET['delete'])) {
     header("Location: comments.php?deleted=1");
     exit;
 }
+
+include 'header.php';
 
 // Fetch all comments with related post title
 $comments = mysqli_query($conn, "
