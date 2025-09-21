@@ -1,8 +1,5 @@
 <?php
 include 'auth.php';
-?>
-
-<?php
 include '../db.php';
 
 if (!isset($_GET['id'])) {
@@ -23,4 +20,3 @@ mysqli_query($conn, "DELETE FROM posts WHERE id = $id");
 
 header("Location: manage.php");
 exit;
-?>
