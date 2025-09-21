@@ -52,7 +52,7 @@ if ($post['category_id']) {
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="../index.php">Blog</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="../about.php">About</a></li>
             </ul>
         </div>
     </div>
