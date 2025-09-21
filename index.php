@@ -58,7 +58,7 @@
                 <?php endif; ?>
 
                 <!-- Non-featured posts -->
-                <div class="row">
+                <div class="row g-4">
                     <?php
                     $postsPerPage = 4;
                     $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
@@ -82,7 +82,7 @@
                     while ($post = mysqli_fetch_assoc($nonFeatured)):
                     ?>
                         <div class="col-lg-6">
-                            <div class="card h-100 shadow-sm">
+                            <div class="card shadow-sm">
                                 <img class="card-img-top"
                                     src="uploads/<?= htmlspecialchars($post['image']) ?>"
                                     alt="<?= htmlspecialchars($post['title']) ?>">
