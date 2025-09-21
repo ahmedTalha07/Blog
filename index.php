@@ -8,7 +8,7 @@
     <meta name="author" content="Talha Ahmed">
     <title>Talha Ahmed Blog</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet">
 </head>
 
 <body>
