@@ -1,9 +1,8 @@
 [package]
-name = "my-php-app"
+name = "your-app"
 version = "1.0.0"
 
 [web]
-# tell Wasmer to use PHP to run the app
 runner = "php"
 entrypoint = "index.php"
 assets = ["css", "js", "uploads", "images"]
