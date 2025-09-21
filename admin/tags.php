@@ -1,7 +1,6 @@
 <?php
 include 'auth.php';
 include '../db.php';
-include 'header.php';
 
 // Handle tag update
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
@@ -29,12 +28,13 @@ $editId = isset($_GET['edit']) ? intval($_GET['edit']) : null;
 
 // Fetch all tags with post count
 $tags = mysqli_query($conn, "
-    SELECT tags.id, tags.name, COUNT(post_tags.post_id) AS post_count
-    FROM tags
-    LEFT JOIN post_tags ON tags.id = post_tags.tag_id
-    GROUP BY tags.id, tags.name
-    ORDER BY post_count DESC, tags.name
+SELECT tags.id, tags.name, COUNT(post_tags.post_id) AS post_count
+FROM tags
+LEFT JOIN post_tags ON tags.id = post_tags.tag_id
+GROUP BY tags.id, tags.name
+ORDER BY post_count DESC, tags.name
 ");
+include 'header.php';
 ?>
 <head>
     <link rel="stylesheet" href="../css/styles.css">
