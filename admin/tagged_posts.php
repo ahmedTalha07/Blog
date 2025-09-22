@@ -16,8 +16,9 @@ $posts = mysqli_query($conn, "
     ORDER BY posts.created_at DESC
 ");
 ?>
+
 <head>
- <link href="../css/styles.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
 </head>
 <main class="container main-container mt-5">
     <h3>Posts with Tag: <span class="badge bg-primary"><?= htmlspecialchars($tag_name) ?></span></h3>
@@ -27,7 +28,9 @@ $posts = mysqli_query($conn, "
         <ul class="list-group">
             <?php while ($post = mysqli_fetch_assoc($posts)): ?>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <a href="../post/<?= $post['slug'] ?>" target="_blank"><?= htmlspecialchars($post['title']) ?></a>
+                    <a href="../post/index.php?slug=<?= urlencode($post['slug']) ?>" target="_blank">
+                        <?= htmlspecialchars($post['title']) ?>
+                    </a>
                     <small class="text-muted"><?= date('M d, Y', strtotime($post['created_at'])) ?></small>
                 </li>
             <?php endwhile; ?>
