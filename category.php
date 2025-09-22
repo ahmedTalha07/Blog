@@ -39,8 +39,8 @@ $result = mysqli_query($conn, "
   <!-- Header -->
   <?php include 'components/header.php'; ?>
   <!-- Category posts -->
-  <main class="flex-grow-1 container">
-    <div class="row">
+  <main class="container mt-5 main-container">
+    <div class="row g-4">
       <div class="col-lg-8">
         <?php if (mysqli_num_rows($result) > 0): ?>
           <div class="row">
@@ -83,6 +83,25 @@ $result = mysqli_query($conn, "
   <!-- Footer -->
   <?php include 'components/footer.php'; ?>
 
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var grid = document.querySelector('[data-masonry]');
+    // init Masonry
+    var msnry = new Masonry(grid, {
+      itemSelector: '.col-lg-6', // whatever your column selector is
+      percentPosition: true
+    });
+
+    // layout Masonry after each image loads
+    imagesLoaded(grid).on('progress', function() {
+      msnry.layout();
+    });
+  });
+</script>
+
+    <!-- Bootstrap core JS -->
+     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

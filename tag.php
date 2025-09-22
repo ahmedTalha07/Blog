@@ -74,26 +74,6 @@ include 'components/navbar.php';
     </main>
 
     <?php include 'components/footer.php'; ?>
-
-    <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var grid = document.querySelector('[data-masonry]');
-    // init Masonry
-    var msnry = new Masonry(grid, {
-      itemSelector: '.col-lg-6', // whatever your column selector is
-      percentPosition: true
-    });
-
-    // layout Masonry after each image loads
-    imagesLoaded(grid).on('progress', function() {
-      msnry.layout();
-    });
-  });
-</script>
-
-    <!-- Bootstrap core JS -->
-     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
