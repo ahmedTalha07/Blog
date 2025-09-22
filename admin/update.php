@@ -8,48 +8,44 @@ $content    = mysqli_real_escape_string($conn, $_POST['content']);
 $featured   = isset($_POST['featured']) ? 1 : 0;
 $category_id = intval($_POST['category_id']);
 
-// default to old image from hidden field
 // default to old image
 $image = mysqli_real_escape_string($conn, $_POST['current_image'] ?? '');
 
-// only rename once, do NOT prepend time() to an already-renamed file
+// only rename once
 if (!empty($_FILES['image']['name'])) {
-    // just build new name ONCE from the *original uploaded* filename
     $original = basename($_FILES['image']['name']);
     $newName  = time() . '_' . $original;
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], "../uploads/$newName")) {
-        $image = $newName; // store exactly this name in DB
+        $image = $newName;
     }
 }
 
-
-
-// if marking as featured, unfeature all others first
 if ($featured == 1) {
     mysqli_query($conn, "UPDATE posts SET featured = 0");
 }
 
-// update post (always sets image column now)
 $update = "
-    UPDATE posts SET
-        title       = '$title',
-        content     = '$content',
-        featured    = $featured,
-        category_id = $category_id,
-        image       = '$image'
-    WHERE id = $id
+UPDATE posts SET
+    title       = '$title',
+    content     = '$content',
+    featured    = $featured,
+    category_id = $category_id,
+    image       = '$image'
+WHERE id = $id
 ";
-mysqli_query($conn, $update);
 
-// update tags
+// run the update ONCE, with error check
+if (!mysqli_query($conn, $update)) {
+    die('MySQL error: '.mysqli_error($conn).'<br>Query: '.$update);
+}
+
+// tags update
 $post_id    = $id;
 $tags_input = $_POST['tags'] ?? '';
 
-// remove all old tag links
 mysqli_query($conn, "DELETE FROM post_tags WHERE post_id = $post_id");
 
-// re-insert updated tags
 if (!empty($tags_input)) {
     $tags = array_map('trim', explode(',', $tags_input));
     foreach ($tags as $tag) {
@@ -63,18 +59,8 @@ if (!empty($tags_input)) {
             mysqli_query($conn, "INSERT INTO tags (name) VALUES ('$tag')");
             $tag_id = mysqli_insert_id($conn);
         }
-
         mysqli_query($conn, "INSERT INTO post_tags (post_id, tag_id) VALUES ($post_id, $tag_id)");
     }
-}
-
-// after building $update query, before header():
-if (!mysqli_query($conn, $update)) {
-    die('MySQL error: ' . mysqli_error($conn) . '<br>Query: ' . $update);
-} else {
-    echo "Image value being saved: $image<br>";
-    echo "Query: $update<br>";
-    exit;
 }
 
 header("Location: manage.php");
