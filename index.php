@@ -106,10 +106,9 @@
                 <!-- Pagination -->
                 <?php include './components/pagination.php'; ?>
             </div><!-- /.col-lg-8 -->
-
-            
-            
+            <div class="col-4">
                 <?php include './components/widgets.php'; ?>
+            </div>
         </div>
     </main>
 
