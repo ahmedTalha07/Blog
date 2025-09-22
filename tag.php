@@ -18,7 +18,7 @@ $query = "
 ";
 
 $result = mysqli_query($conn, $query);
-include 'components/header.php';
+include 'components/navbar.php';
 ?>
 
 <!DOCTYPE html>
