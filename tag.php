@@ -18,7 +18,7 @@ $query = "
 ";
 
 $result = mysqli_query($conn, $query);
-include 'header.php';
+include 'components/header.php';
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +50,7 @@ include 'header.php';
             <?php endwhile; ?>
         <?php endif; ?>
             </main>
-    <?php include 'footer.php'; ?>
+    <?php include 'components/footer.php'; ?>
 </body>
 
 </html>
