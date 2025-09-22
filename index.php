@@ -107,35 +107,36 @@
                 <?php include './components/pagination.php'; ?>
             </div><!-- /.col-lg-8 -->
 
-            <!-- Sidebar widgets -->
+            <!-- Sidebar widgets in its own col -->
+            <div class="col-lg-4">
                 <?php include './components/widgets.php'; ?>
+            </div><!-- /.col-lg-4 -->
 
         </div><!-- /.row -->
-        </main><!-- /.container -->
+    </main><!-- /.container -->
 
-        <!-- Footer -->
-        <?php include './components/footer.php'; ?>
+    <!-- Footer -->
+    <?php include './components/footer.php'; ?>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var grid = document.querySelector('[data-masonry]');
-                if (grid) {
-                    var msnry = new Masonry(grid, {
-                        itemSelector: '.col-lg-6',
-                        percentPosition: true
-                    });
-                    imagesLoaded(grid).on('progress', function() {
-                        msnry.layout();
-                    });
-                }
-            });
-        </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var grid = document.querySelector('[data-masonry]');
+            if (grid) {
+                var msnry = new Masonry(grid, {
+                    itemSelector: '.col-lg-6',
+                    percentPosition: true
+                });
+                imagesLoaded(grid).on('progress', function() {
+                    msnry.layout();
+                });
+            }
+        });
+    </script>
 
-        <!-- Bootstrap core JS -->
-        <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-        <script src="js/scripts.js"></script>
+    <!-- Bootstrap core JS -->
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
-
 </html>
