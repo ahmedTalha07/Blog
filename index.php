@@ -110,10 +110,9 @@
             
             <div class="col-lg-4">
                 <?php include './components/widgets.php'; ?>
-            </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-        <!-- Sidebar widgets column -->
-    </main><!-- /.container -->
+            </div>
+        </div>
+    </main>
 
     <!-- Footer -->
     <?php include './components/footer.php'; ?>
