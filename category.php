@@ -54,10 +54,11 @@ $result = mysqli_query($conn, "
                       style="height:200px;object-fit:cover;">
                   <?php endif; ?>
                   <div class="card-body">
-                    <div class="small text-muted"><?= date('F j, Y', strtotime($post['created_at'])) ?>
-                      <?php if (!empty($post['category_name'])): ?>
-                        | <span class="badge bg-secondary"><?= htmlspecialchars($post['category_name']) ?></span>
-                      <?php endif; ?></div>
+                    <div class="small text-muted">
+                      <?= date('F j, Y', strtotime($post['created_at'])) ?>
+                      | <span class="badge bg-secondary"><?= htmlspecialchars($cat_name) ?></span>
+                    </div>
+
                     <h5 class="card-title"><?= htmlspecialchars($post['title']) ?></h5>
                     <p class="card-text"><?= substr(strip_tags($post['content']), 0, 100) ?>...</p>
                     <a href="post/index.php?slug=<?= htmlspecialchars($post['slug']) ?>" class="btn btn-outline-primary btn-sm">
