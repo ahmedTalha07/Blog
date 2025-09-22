@@ -13,13 +13,9 @@ $imageSQL = '';
 if (!empty($_FILES['image']['name'])) {
     $image = time() . '_' . basename($_FILES['image']['name']);
     $target = '../uploads/' . $image;
-    move_uploaded_file($_FILES['image']['tmp_name'], $target);
-    $imageSQL = ", image = '$image'";
-}
-
-// If making featured, unfeature all others first
-if ($featured == 1) {
-    mysqli_query($conn, "UPDATE posts SET featured = 0");
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+        $imageSQL = ", image = '$image'";
+    }
 }
 
 $update = "UPDATE posts SET 
@@ -27,9 +23,10 @@ $update = "UPDATE posts SET
     content = '$content', 
     featured = $featured,
     category_id = $category_id
- 
     $imageSQL
-    WHERE id = $id";
+WHERE id = $id";
+mysqli_query($conn, $update);
+
 
 $post_id = $_POST['id'];
 $tags_input = $_POST['tags'];
@@ -62,4 +59,3 @@ mysqli_query($conn, $update);
 
 header("Location: manage.php");
 exit;
-?>
