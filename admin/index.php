@@ -63,6 +63,7 @@ $commentCount = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS total
         </div>
 
         <a href="/admin/add.php" class="btn btn-primary">+ Add New Post</a>
+        <a href="../index.php" class="btn btn-secondary">← Go to Site</a>
     </main>
 
     <?php include 'footer.php'; ?>
