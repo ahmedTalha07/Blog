@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Talha Ahmed’s personal blog – documenting projects, tutorials, and life updates.">
-    <meta name="author" content="Talha Ahmed">
-    <title>Talha Ahmed Blog</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    <link href="css/styles.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Talha Ahmed’s personal blog – documenting projects, tutorials, and life updates.">
+  <meta name="author" content="Talha Ahmed">
+  <title>Talha Ahmed Blog</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link href="css/styles.css" rel="stylesheet">
 </head>
-
 <body>
-    <!-- Responsive navbar -->
-    <?php include './components/navbar.php'; ?>
 
-    <!-- Page header -->
-    <?php include './components/header.php'; ?>
+  <!-- Navbar -->
+  <?php include './components/navbar.php'; ?>
 
-    <!-- Page content -->
-    <div class="container my-4">
-      <div class="row">
-        <!-- Blog entries -->
-        <div class="col-lg-8">
-          <?php include 'db.php'; ?>
+  <!-- Header -->
+  <?php include './components/header.php'; ?>
 
-          <!-- Featured blog post -->
-          <?php
-          $featuredResult = mysqli_query($conn, "
-            SELECT posts.*, categories.name AS category_name 
-            FROM posts 
-            LEFT JOIN categories ON posts.category_id = categories.id 
-            WHERE featured = 1 
-            ORDER BY created_at DESC 
-            LIMIT 1
-          ");
-          if ($featured = mysqli_fetch_assoc($featuredResult)):
-          ?>
+  <!-- Main content -->
+  <div class="container mt-5 main-container">
+    <div class="row">
+      <!-- Left column: posts -->
+      <div class="col-lg-8">
+        <?php include 'db.php'; ?>
+
+        <!-- Featured post -->
+        <?php
+        $featuredResult = mysqli_query($conn, "
+          SELECT posts.*, categories.name AS category_name 
+          FROM posts 
+          LEFT JOIN categories ON posts.category_id = categories.id 
+          WHERE featured = 1 
+          ORDER BY created_at DESC 
+          LIMIT 1
+        ");
+        if ($featured = mysqli_fetch_assoc($featuredResult)): ?>
           <div class="card mb-4 shadow-sm">
             <img class="card-img-top"
                  src="/uploads/<?= htmlspecialchars($featured['image']) ?>"
@@ -55,30 +54,29 @@
               </a>
             </div>
           </div>
-          <?php endif; ?>
+        <?php endif; ?>
 
-          <!-- Non-featured posts -->
-          <div class="row g-4" data-masonry='{"percentPosition": true }'>
-            <?php
-            $postsPerPage = 4;
-            $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
-            $offset = ($page - 1) * $postsPerPage;
+        <!-- Non-featured posts -->
+        <div class="row g-4" data-masonry='{"percentPosition": true }'>
+          <?php
+          $postsPerPage = 4;
+          $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
+          $offset = ($page - 1) * $postsPerPage;
 
-            $totalRes = mysqli_query($conn, "SELECT COUNT(*) as total FROM posts WHERE featured = 0");
-            $totalRows = mysqli_fetch_assoc($totalRes)['total'];
-            $totalPages = ceil($totalRows / $postsPerPage);
+          $totalRes = mysqli_query($conn, "SELECT COUNT(*) as total FROM posts WHERE featured = 0");
+          $totalRows = mysqli_fetch_assoc($totalRes)['total'];
+          $totalPages = ceil($totalRows / $postsPerPage);
 
-            $nonFeatured = mysqli_query($conn, "
-              SELECT posts.*, categories.name AS category_name 
-              FROM posts 
-              LEFT JOIN categories ON posts.category_id = categories.id 
-              WHERE featured = 0 
-              ORDER BY created_at DESC 
-              LIMIT $offset, $postsPerPage
-            ");
+          $nonFeatured = mysqli_query($conn, "
+            SELECT posts.*, categories.name AS category_name 
+            FROM posts 
+            LEFT JOIN categories ON posts.category_id = categories.id 
+            WHERE featured = 0 
+            ORDER BY created_at DESC 
+            LIMIT $offset, $postsPerPage
+          ");
 
-            while ($post = mysqli_fetch_assoc($nonFeatured)):
-            ?>
+          while ($post = mysqli_fetch_assoc($nonFeatured)): ?>
             <div class="col-lg-6">
               <div class="card shadow-sm">
                 <img class="card-img-top"
@@ -99,41 +97,44 @@
                 </div>
               </div>
             </div>
-            <?php endwhile; ?>
-            <div class="col-lg-4">
-              <?php include './components/widgets.php'; ?>
-            </div><!-- /.col-lg-4 -->
-          </div>
+          <?php endwhile; ?>
+        </div><!-- /.row.g-4 -->
 
-          <!-- Pagination -->
-          <?php include './components/pagination.php'; ?>
-        </div><!-- /.col-lg-8 -->
+        <!-- Pagination -->
+        <?php include './components/pagination.php'; ?>
+      </div><!-- /.col-lg-8 -->
 
-        <!-- Sidebar widgets -->
-      </div><!-- /.row -->
-    </div><!-- /.container -->
+      <!-- Right column: sidebar widgets -->
+      <div class="col-lg-4">
+        <?php include './components/widgets.php'; ?>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
 
-    <!-- Footer -->
-    <?php include './components/footer.php'; ?>
+  <!-- Footer -->
+  <?php include './components/footer.php'; ?>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var grid = document.querySelector('[data-masonry]');
-        if (grid) {
-          var msnry = new Masonry(grid, {
-            itemSelector: '.col-lg-6',
-            percentPosition: true
-          });
-          imagesLoaded(grid).on('progress', function() {
-            msnry.layout();
-          });
-        }
-      });
-    </script>
+  <!-- Masonry script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var grid = document.querySelector('[data-masonry]');
+      if (grid) {
+        var msnry = new Masonry(grid, {
+          itemSelector: '.col-lg-6',
+          percentPosition: true
+        });
+        imagesLoaded(grid).on('progress', function() {
+          msnry.layout();
+        });
+      }
+    });
+  </script>
 
-    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-    <script src="js/scripts.js"></script>
+  <!-- Bootstrap and dependencies -->
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="js/scripts.js"></script>
+
 </body>
 </html>
