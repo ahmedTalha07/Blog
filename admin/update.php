@@ -13,13 +13,15 @@ $image = mysqli_real_escape_string($conn, $_POST['current_image'] ?? '');
 
 // if a new file was uploaded, overwrite $image and move the file
 if (!empty($_FILES['image']['name'])) {
+    // build new name only ONCE
     $newName = time() . '_' . basename($_FILES['image']['name']);
     $target  = '../uploads/' . $newName;
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-        $image = $newName; // update to new filename
+        $image = $newName; // store this exact name in DB
     }
 }
+
 
 // if marking as featured, unfeature all others first
 if ($featured == 1) {
@@ -66,7 +68,7 @@ if (!empty($tags_input)) {
 
 // after building $update query, before header():
 if (!mysqli_query($conn, $update)) {
-    die('MySQL error: '.mysqli_error($conn).'<br>Query: '.$update);
+    die('MySQL error: ' . mysqli_error($conn) . '<br>Query: ' . $update);
 } else {
     echo "Image value being saved: $image<br>";
     echo "Query: $update<br>";
