@@ -100,6 +100,11 @@
               </div>
             </div>
             <?php endwhile; ?>
+            <div class="col-lg-4">
+              <?php include './components/widgets.php'; ?>
+            </div><!-- /.col-lg-4 -->
+          </div><!-- /.row -->
+        </div><!-- /.container -->
           </div>
 
           <!-- Pagination -->
@@ -107,11 +112,6 @@
         </div><!-- /.col-lg-8 -->
 
         <!-- Sidebar widgets -->
-        <div class="col-lg-4">
-          <?php include './components/widgets.php'; ?>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-    </div><!-- /.container -->
 
     <!-- Footer -->
     <?php include './components/footer.php'; ?>
