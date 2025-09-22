@@ -5,7 +5,7 @@
     <div class="card mb-4">
         <div class="card-header">Search</div>
         <div class="card-body">
-            <form action="search.php" method="get">
+            <form action="/search.php" method="get">
                 <div class="input-group">
                     <label for="q" class="visually-hidden">Search:</label>
                     <input class="form-control" type="text" id="q" name="q" placeholder="Search..." required>
