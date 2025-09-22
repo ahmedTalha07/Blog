@@ -41,7 +41,7 @@ include 'components/navbar.php';
         <?php if (mysqli_num_rows($result) == 0): ?>
             <div class="alert alert-warning">No posts found for this tag.</div>
         <?php else: ?>
-            <div class="row">
+            <div class="row g-4">
                 <?php while ($post = mysqli_fetch_assoc($result)): ?>
                     <div class="col-md-6 col-lg-4">
                         <div class="card mb-4 shadow-sm h-100">
