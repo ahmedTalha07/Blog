@@ -46,7 +46,7 @@ $result = mysqli_query($conn, "
           <div class="row">
             <?php while ($post = mysqli_fetch_assoc($result)): ?>
               <div class="col-md-6">
-                <div class="card mb-4 shadow-sm h-100">
+                <div class="card mb-4 shadow-sm">
                   <?php if (!empty($post['image'])): ?>
                     <img class="card-img-top"
                       src="/uploads/<?= htmlspecialchars($post['image']) ?>"
