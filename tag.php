@@ -44,7 +44,7 @@ include 'components/navbar.php';
                     <div class="card-body">
                         <h3><?= htmlspecialchars($post['title']) ?></h3>
                         <p><?= htmlspecialchars(substr($post['content'], 0, 150)) ?>...</p>
-                        <a href="post/<?= $post['slug'] ?>" class="btn btn-primary">Read more →</a>
+                        <a href="post/index.php?slug=<?= htmlspecialchars($post['slug']) ?>" class="btn btn-primary">Read more →</a>
                     </div>
                 </div>
             <?php endwhile; ?>
