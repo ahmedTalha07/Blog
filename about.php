@@ -57,8 +57,8 @@
             </li>
           </ul>
         </div>
-        <?php include './components/widgets.php'; ?>
       </div>
+      <?php include './components/widgets.php'; ?>
 </main>
 
     <!-- Sidebar widgets -->
