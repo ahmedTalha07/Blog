@@ -34,12 +34,4 @@
             </ul>
         </div>
     </div>
-
-    <!-- About widget -->
-    <div class="card mb-4">
-        <div class="card-header">About Me</div>
-        <div class="card-body">
-            Hi, I’m Talha Ahmed! I share my projects, tutorials, and thoughts on web development here.
-        </div>
-    </div>
 </div>
