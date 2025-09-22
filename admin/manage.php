@@ -38,7 +38,7 @@ include 'header.php';
             <td><?= date('M d, Y', strtotime($row['created_at'])) ?></td>
             <td>
               <?php if (!$row['featured']): ?>
-                <a href="feature.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-outline-primary mb-1">Set as Featured</a>
+                <a href="feature.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-outline-primary">Set as Featured</a>
               <?php else: ?>
                 <span class="text-muted d-block mb-1">Currently Featured</span>
               <?php endif; ?>
