@@ -26,7 +26,7 @@
                 $cats = mysqli_query($conn, "SELECT * FROM categories");
                 while ($c = mysqli_fetch_assoc($cats)):
                 ?>
-                    <li><a href="category.php?id=<?= $c['id'] ?>">
+                    <li><a href="/category.php?id=<?= $c['id'] ?>">
                             <?= htmlspecialchars($c['name']) ?>
                         </a>
                     </li>
