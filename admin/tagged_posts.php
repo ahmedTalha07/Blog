@@ -35,4 +35,4 @@ $posts = mysqli_query($conn, "
     <?php endif; ?>
 </main>
 
-<?php include 'footer.php'; ?>
+<?php include 'footer.php';
