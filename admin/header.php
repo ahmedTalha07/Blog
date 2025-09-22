@@ -18,6 +18,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 </head>
 
 <body>
+    <main class="container main-container mt-5">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">🛠 Admin Panel</a>
@@ -40,3 +41,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
             </div>
         </div>
     </nav>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>     
+</html>
