@@ -38,7 +38,7 @@
                 ?>
                     <div class="card mb-4 shadow-sm">
                         <img class="card-img-top"
-                            src="uploads/<?= htmlspecialchars($featured['image']) ?>"
+                            src="/uploads/<?= htmlspecialchars($featured['image']) ?>"
                             alt="<?= htmlspecialchars($featured['title']) ?>">
                         <div class="card-body">
                             <div class="small text-muted">
