@@ -58,7 +58,7 @@
                 <?php endif; ?>
 
                 <!-- Non-featured posts grid -->
-                <div class="row g-4" data-masonry='{"percentPosition": true }'>
+                <div class="row" data-masonry='{"percentPosition": true }'>
                     <?php
                     $postsPerPage = 4;
                     $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
@@ -106,9 +106,7 @@
                 <!-- Pagination -->
                 <?php include './components/pagination.php'; ?>
             </div><!-- /.col-lg-8 -->
-            <div class="col-4">
                 <?php include './components/widgets.php'; ?>
-            </div>
         </div>
     </main>
 
