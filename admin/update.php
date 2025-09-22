@@ -64,5 +64,14 @@ if (!empty($tags_input)) {
     }
 }
 
+// after building $update query, before header():
+if (!mysqli_query($conn, $update)) {
+    die('MySQL error: '.mysqli_error($conn).'<br>Query: '.$update);
+} else {
+    echo "Image value being saved: $image<br>";
+    echo "Query: $update<br>";
+    exit;
+}
+
 header("Location: manage.php");
 exit;
