@@ -33,7 +33,7 @@ include 'components/navbar.php';
 </head>
 
 <body>
-    <main class="container mt-5">
+    <main class="container main-container mt-5">
         <h2 class="mb-4">
             Posts tagged with <span class="text-primary"><?= htmlspecialchars($tag) ?></span>
         </h2>
