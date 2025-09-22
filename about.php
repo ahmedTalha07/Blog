@@ -18,7 +18,7 @@
        <?php include './components/header.php'; ?>
 
 <!-- Page content -->
-<div class="container">
+<main class="container mt-5 main-container">
   <div class="row">
     <!-- Main Content -->
     <div class="col-lg-8">
@@ -58,7 +58,7 @@
           </ul>
         </div>
       </div>
-    </div>
+</main>
 
     <!-- Sidebar widgets -->
        <?php include './components/widgets.php'; ?>
