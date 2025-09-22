@@ -154,9 +154,7 @@ if ($post_id > 0) {
     </div>
 
     <!-- Sidebar widgets -->
-    <div class="col-lg-4">
       <?php include '../components/widgets.php'; ?>
-    </div>
   </div>
 </main>
 
