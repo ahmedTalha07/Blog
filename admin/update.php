@@ -9,18 +9,20 @@ $featured   = isset($_POST['featured']) ? 1 : 0;
 $category_id = intval($_POST['category_id']);
 
 // default to old image from hidden field
+// default to old image
 $image = mysqli_real_escape_string($conn, $_POST['current_image'] ?? '');
 
-// if a new file was uploaded, overwrite $image and move the file
+// only rename once, do NOT prepend time() to an already-renamed file
 if (!empty($_FILES['image']['name'])) {
-    // build new name only ONCE
-    $newName = time() . '_' . basename($_FILES['image']['name']);
-    $target  = '../uploads/' . $newName;
+    // just build new name ONCE from the *original uploaded* filename
+    $original = basename($_FILES['image']['name']);
+    $newName  = time() . '_' . $original;
 
-    if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-        $image = $newName; // store this exact name in DB
+    if (move_uploaded_file($_FILES['image']['tmp_name'], "../uploads/$newName")) {
+        $image = $newName; // store exactly this name in DB
     }
 }
+
 
 
 // if marking as featured, unfeature all others first
