@@ -84,7 +84,7 @@
                         <div class="col-lg-6">
                             <div class="card shadow-sm">
                                 <img class="card-img-top"
-                                    src="uploads/<?= htmlspecialchars($post['image']) ?>"
+                                    src="/uploads/<?= htmlspecialchars($post['image']) ?>"
                                     alt="<?= htmlspecialchars($post['title']) ?>">
                                 <div class="card-body">
                                     <div class="small text-muted">
