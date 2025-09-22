@@ -18,7 +18,7 @@
     <!-- Page header -->
     <?php include './components/header.php'; ?>
     <!-- Page content -->
-    <div class="container">
+    <div class="container main-container mt-5">
         <div class="row">
             <!-- Blog entries -->
             <div class="col-lg-8">
