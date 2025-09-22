@@ -33,6 +33,6 @@ $posts = mysqli_query($conn, "
     <?php else: ?>
         <p>No posts found for this tag.</p>
     <?php endif; ?>
-    </main>
+</main>
 
 <?php include 'footer.php'; ?>
