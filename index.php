@@ -18,7 +18,7 @@
   <?php include './components/header.php'; ?>
 
   <!-- Main content -->
-  <div class="container mt-5 main-container">
+  <div class="container my-4">
     <div class="row">
       <!-- Left column: posts -->
       <div class="col-lg-8">
