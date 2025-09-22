@@ -106,12 +106,10 @@
                 <!-- Pagination -->
                 <?php include './components/pagination.php'; ?>
             </div><!-- /.col-lg-8 -->
-
-            <!-- Sidebar widgets in its own col -->
+           <!-- Sidebar widgets in its own col -->
             <div class="col-lg-4">
                 <?php include './components/widgets.php'; ?>
             </div><!-- /.col-lg-4 -->
-
         </div><!-- /.row -->
     </main><!-- /.container -->
 
