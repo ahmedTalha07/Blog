@@ -108,11 +108,11 @@
             </div><!-- /.col-lg-8 -->
 
             
+            <div class="col-lg-4">
+                <?php include './components/widgets.php'; ?>
+            </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
         <!-- Sidebar widgets column -->
-        <div class="col-lg-4">
-            <?php include './components/widgets.php'; ?>
-        </div><!-- /.col-lg-4 -->
     </main><!-- /.container -->
 
     <!-- Footer -->
