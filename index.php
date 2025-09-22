@@ -21,25 +21,25 @@
     <!-- Page content -->
     <main class="container main-container mt-5">
         <div class="row">
-            <!-- Blog entries -->
+            <!-- Blog entries column -->
             <div class="col-lg-8">
                 <?php include 'db.php'; ?>
 
                 <!-- Featured blog post -->
                 <?php
                 $featuredResult = mysqli_query($conn, "
-          SELECT posts.*, categories.name AS category_name 
-          FROM posts 
-          LEFT JOIN categories ON posts.category_id = categories.id 
-          WHERE featured = 1 
-          ORDER BY created_at DESC 
-          LIMIT 1
-        ");
+                    SELECT posts.*, categories.name AS category_name 
+                    FROM posts 
+                    LEFT JOIN categories ON posts.category_id = categories.id 
+                    WHERE featured = 1 
+                    ORDER BY created_at DESC 
+                    LIMIT 1
+                ");
                 if ($featured = mysqli_fetch_assoc($featuredResult)): ?>
                     <div class="card mb-4 shadow-sm">
                         <img class="card-img-top"
-                            src="/uploads/<?= htmlspecialchars($featured['image']) ?>"
-                            alt="<?= htmlspecialchars($featured['title']) ?>">
+                             src="/uploads/<?= htmlspecialchars($featured['image']) ?>"
+                             alt="<?= htmlspecialchars($featured['title']) ?>">
                         <div class="card-body">
                             <div class="small text-muted">
                                 <?= date('F j, Y', strtotime($featured['created_at'])) ?>
@@ -57,7 +57,7 @@
                     </div>
                 <?php endif; ?>
 
-                <!-- Non-featured posts -->
+                <!-- Non-featured posts grid -->
                 <div class="row g-4" data-masonry='{"percentPosition": true }'>
                     <?php
                     $postsPerPage = 4;
@@ -71,20 +71,20 @@
 
                     // Fetch current page posts
                     $nonFeatured = mysqli_query($conn, "
-            SELECT posts.*, categories.name AS category_name 
-            FROM posts 
-            LEFT JOIN categories ON posts.category_id = categories.id 
-            WHERE featured = 0 
-            ORDER BY created_at DESC 
-            LIMIT $offset, $postsPerPage
-          ");
+                        SELECT posts.*, categories.name AS category_name 
+                        FROM posts 
+                        LEFT JOIN categories ON posts.category_id = categories.id 
+                        WHERE featured = 0 
+                        ORDER BY created_at DESC 
+                        LIMIT $offset, $postsPerPage
+                    ");
 
                     while ($post = mysqli_fetch_assoc($nonFeatured)): ?>
                         <div class="col-lg-6">
                             <div class="card shadow-sm">
                                 <img class="card-img-top"
-                                    src="/uploads/<?= htmlspecialchars($post['image']) ?>"
-                                    alt="<?= htmlspecialchars($post['title']) ?>">
+                                     src="/uploads/<?= htmlspecialchars($post['image']) ?>"
+                                     alt="<?= htmlspecialchars($post['title']) ?>">
                                 <div class="card-body">
                                     <div class="small text-muted">
                                         <?= date('F j, Y', strtotime($post['created_at'])) ?>
@@ -106,17 +106,19 @@
                 <!-- Pagination -->
                 <?php include './components/pagination.php'; ?>
             </div><!-- /.col-lg-8 -->
-           <!-- Sidebar widgets in its own col -->
+
+            <!-- Sidebar widgets column -->
             <div class="col-lg-4">
                 <?php include './components/widgets.php'; ?>
             </div><!-- /.col-lg-4 -->
+
         </div><!-- /.row -->
     </main><!-- /.container -->
 
     <!-- Footer -->
     <?php include './components/footer.php'; ?>
 
-    <!-- <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             var grid = document.querySelector('[data-masonry]');
             if (grid) {
@@ -129,9 +131,9 @@
                 });
             }
         });
-    </script> -->
+    </script>
 
-    <!-- Bootstrap core JS -->
+    <!-- Bootstrap core JS & Masonry -->
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
