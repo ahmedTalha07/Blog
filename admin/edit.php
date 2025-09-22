@@ -70,6 +70,7 @@ $catResult = mysqli_query($conn, "SELECT * FROM categories");
       <div class="mb-3">
         <label class="form-label">Replace Image (optional)</label>
         <input class="form-control" type="file" name="image">
+        <input type="hidden" name="current_image" value="<?= $post['image'] ?>">
         <div class="small text-muted mt-1">Current: <?= $post['image'] ?: 'No image' ?></div>
       </div>
       <div class="form-check mb-3">
