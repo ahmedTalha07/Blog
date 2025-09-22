@@ -116,7 +116,7 @@
     <!-- Footer -->
     <?php include './components/footer.php'; ?>
 
-    <script>
+    <!-- <script>
         document.addEventListener('DOMContentLoaded', function() {
             var grid = document.querySelector('[data-masonry]');
             if (grid) {
@@ -129,7 +129,7 @@
                 });
             }
         });
-    </script>
+    </script> -->
 
     <!-- Bootstrap core JS -->
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
