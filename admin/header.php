@@ -15,11 +15,9 @@ if (session_status() === PHP_SESSION_NONE) session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome (optional icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="../css/styles.css" rel="stylesheet">
 </head>
 
 <body>
-    <main class="container main-container mt-5">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">🛠 Admin Panel</a>
@@ -42,7 +40,3 @@ if (session_status() === PHP_SESSION_NONE) session_start();
             </div>
         </div>
     </nav>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>     
-</html>
