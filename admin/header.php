@@ -27,16 +27,16 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 
             <div class="collapse navbar-collapse" id="navbarAdmin">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="/index.php">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/manage.php">Posts</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/categories.php">Categories</a>
-                    <li class="nav-item"><a class="nav-link" href="/tags.php">Tags</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/comments.php">Comments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../admin/index.php">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../admin/manage.php">Posts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../admin/categories.php">Categories</a>
+                    <li class="nav-item"><a class="nav-link" href="../admin/tags.php">Tags</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../admin/comments.php">Comments</a></li>
                 </ul>
                 <span class="navbar-text me-3 text-white">
                     Logged in as <strong>Admin</strong>
                 </span>
-                <a class="btn btn-outline-light btn-sm" href="logout.php">Logout</a>
+                <a class="btn btn-outline-light btn-sm" href="../admin/login.php">Logout</a>
             </div>
         </div>
     </nav>
