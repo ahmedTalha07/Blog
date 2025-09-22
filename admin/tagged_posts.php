@@ -16,7 +16,9 @@ $posts = mysqli_query($conn, "
     ORDER BY posts.created_at DESC
 ");
 ?>
-
+<head>
+ <link href="../css/styles.css" rel="stylesheet">
+</head>
 <main class="container main-container mt-5">
     <h3>Posts with Tag: <span class="badge bg-primary"><?= htmlspecialchars($tag_name) ?></span></h3>
     <hr>
