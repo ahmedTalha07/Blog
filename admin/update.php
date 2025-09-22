@@ -14,12 +14,14 @@ $image = mysqli_real_escape_string($conn, $_POST['current_image'] ?? '');
 // only rename once
 if (!empty($_FILES['image']['name'])) {
     $original = basename($_FILES['image']['name']);
-    $newName  = time() . '_' . $original;
+    // no time() at all
+    $newName  = $original;
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], "../uploads/$newName")) {
         $image = $newName;
     }
 }
+
 
 if ($featured == 1) {
     mysqli_query($conn, "UPDATE posts SET featured = 0");
@@ -37,7 +39,7 @@ WHERE id = $id
 
 // run the update ONCE, with error check
 if (!mysqli_query($conn, $update)) {
-    die('MySQL error: '.mysqli_error($conn).'<br>Query: '.$update);
+    die('MySQL error: ' . mysqli_error($conn) . '<br>Query: ' . $update);
 }
 
 // tags update
