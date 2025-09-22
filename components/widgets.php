@@ -1,5 +1,6 @@
 <?php include $_SERVER['DOCUMENT_ROOT'].'/db.php';
 ?>
+<div class="col-lg-4">
     <!-- Search widget -->
     <div class="card mb-4">
         <div class="card-header">Search</div>
