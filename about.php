@@ -57,11 +57,11 @@
             </li>
           </ul>
         </div>
+        <?php include './components/widgets.php'; ?>
       </div>
 </main>
 
     <!-- Sidebar widgets -->
-       <?php include './components/widgets.php'; ?>
        <?php include './components/footer.php'; ?>
 
 <!-- Bootstrap core JS -->
