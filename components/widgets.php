@@ -1,6 +1,7 @@
-<?php include $_SERVER['DOCUMENT_ROOT'].'/db.php';
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/db.php';
 ?>
-    <!-- Search widget -->
+<!-- Search widget -->
+<div class="col-lg-4">
     <div class="card mb-4">
         <div class="card-header">Search</div>
         <div class="card-body">
@@ -41,4 +42,5 @@
             Hi, I’m Talha Ahmed! I share my projects, tutorials, and thoughts on web development here.
         </div>
     </div>
+</div>
 </div>
